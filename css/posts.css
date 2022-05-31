@@ -1,0 +1,151 @@
+
+.posts {
+	padding: 0;
+	background-color: white;
+	width: 100%;
+}
+
+.posts-list {
+	display: flex;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+	flex-flow: row wrap;
+}
+
+.posts-item {
+	padding: 1rem;
+	width: 100%;
+	height: 500px;
+	position: relative;
+	overflow: hidden;
+}
+
+.posts-item:not(:first-child) {
+	margin-top: 1rem;
+}
+
+.posts-img-container {
+	overflow: hidden;
+	width: 100%;
+	height: 50vw;
+	position: relative;
+}
+
+.posts-img-container::before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity .5s;
+	background-color: rgba(26,27,27,0.4);
+}
+
+.posts-img-container:hover::before {
+	opacity: 1;
+}
+
+.posts-img {
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+}
+
+.posts-title {
+	color: var(--purple);
+	margin: 1rem 0 0;
+	font-size: 20px;
+	line-height: 22px;
+	height: 44px;
+	overflow: hidden;
+}
+
+.posts-inner-list {
+	margin: 1rem 0 0;
+	font-size: 13px;
+	list-style-type: disc;
+	padding-left: 1rem;
+}
+
+@media (min-width: 400px) {
+
+	.posts-item {
+		height: 550px;
+	}
+
+}
+
+@media (min-width: 576px) {
+
+	.posts-item {
+		margin-top: 5px;
+		margin-right: 5px;
+		width: calc(50% - 2.5px) !important;
+		height: 500px;
+	}
+
+	.posts-item:first-child,
+	.posts-item:nth-child(2) {
+		margin-top: 0;
+	}
+
+	.posts-item:nth-child(2),
+	.posts-item:nth-child(4),
+	.posts-item:nth-child(6),
+	.posts-item:nth-child(8) {
+		margin-right: 0;
+	}
+
+	.posts-img-container {
+		height: 24vw;
+	}
+
+}	
+
+@media (min-width: 768px) {
+
+	.posts-img-container {
+		height: 22vw;
+	}
+
+}
+
+@media (min-width: 992px) {
+
+	.posts {
+		width: 76%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.posts-item {
+		margin-top: 5px !important;
+		margin-right: 5px !important;
+		width: calc(25% - 3.75px) !important;
+		height: 400px;
+	}
+
+	.posts-item:first-child,
+	.posts-item:nth-child(2),
+	.posts-item:nth-child(3),
+	.posts-item:nth-child(4) {
+		margin-top: 0 !important;
+	}
+
+	.posts-item:nth-child(4),
+	.posts-item:nth-child(8) {
+		margin-right: 0 !important;
+	}
+
+	.posts-item:not(:first-child) {
+		width: 100%;
+	}
+
+	.posts-img-container {
+		height: 8vw;
+	}
+
+}
